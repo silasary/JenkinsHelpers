@@ -2,11 +2,11 @@ def call(body){
  if (isUnix())
     {
         sh 'nuget restore'
-        sh 'xbuild'
+        sh 'xbuild /t:Build /p:Configuration=Release'
     }
     else
     {
       bat 'nuget restore'
-      bat 'msbuild'
+      bat 'msbuild /t:Build /p:Configuration=Release'
     }
 }
