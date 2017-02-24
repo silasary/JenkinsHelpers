@@ -1,17 +1,13 @@
-def call(String target = "")
+def call()
 {
-    if (target == "")
-    {
-        target = "RELEASE"
-    }
     if (isUnix())
     {
         sh 'nuget restore'
-        sh 'xbuild /t:Build /p:Configuration=${target}'
+        sh 'xbuild /t:Build /p:Configuration=RELEASE'
     }
     else
     {
       bat 'nuget restore'
-      bat 'msbuild /t:Build /p:Configuration=${target}'
+      bat 'msbuild /t:Build /p:Configuration=RELEASE'
     }
 }
