@@ -1,5 +1,10 @@
-def call(String target = "RELEASE"){
- if (isUnix())
+def call(String target = "")
+{
+    if (target == "")
+    {
+        target = "RELEASE"
+    }
+    if (isUnix())
     {
         sh 'nuget restore'
         sh 'xbuild /t:Build /p:Configuration=${target}'
