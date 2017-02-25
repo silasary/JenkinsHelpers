@@ -5,7 +5,7 @@ def call(String args){
      mono("clickmono.exe", "--packager ${args}")
 }
 
-@noCPS
+@nonCPS
 def setDeploymentUrl(string baseUrl){
     manifests = findFiles(glob: '*.application')
     manifests.each {
