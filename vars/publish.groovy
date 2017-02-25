@@ -5,8 +5,8 @@ def call(String args){
      mono("clickmono.exe", "--packager ${args}")
 }
 
-@nonCPS
-def setDeploymentUrl(string baseUrl){
+// @nonCPS
+def setDeploymentUrl(String baseUrl){
     manifests = findFiles(glob: '*.application')
     manifests.each {
         publish("--update ${it} --deploymentUrl ${baseurl}/${it} --generateBootstrap setup.exe")
