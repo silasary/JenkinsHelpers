@@ -9,7 +9,7 @@ def call()
     {
       bat 'nuget restore'
       bat '''set PATH="%PATH%;%ProgramFiles(x86)%\\Microsoft Visual Studio\\Installer\\"
-if not exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" (
+if not exist "%ProgramFiles(x86)%\\Microsoft Visual Studio\\Installer\\vswhere.exe" (
     curl -O https://github.com/Microsoft/vswhere/releases/download/1.0.71/vswhere.exe
 )
 for /f "usebackq tokens=1* delims=: " %%i in (`vswhere -latest -products * -requires Microsoft.Component.MSBuild -property installationPath`) do (
@@ -35,7 +35,7 @@ def debug()
     {
       bat 'nuget restore'
       bat '''set PATH="%PATH%;%ProgramFiles(x86)%\\Microsoft Visual Studio\\Installer\\"
-if not exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" (
+if not exist "%ProgramFiles(x86)%\\Microsoft Visual Studio\\Installer\\vswhere.exe" (
     curl -O https://github.com/Microsoft/vswhere/releases/download/1.0.71/vswhere.exe
 )
 for /f "usebackq tokens=1* delims=: " %%i in (`vswhere -latest -products * -requires Microsoft.Component.MSBuild -property installationPath`) do (
