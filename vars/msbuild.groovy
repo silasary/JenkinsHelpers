@@ -8,7 +8,7 @@ def call()
     else
     {
       bat 'nuget restore'
-      bat '''set PATH="%PATH%;%ProgramFiles(x86)%\\Microsoft Visual Studio\\Installer\\"
+      bat '''set PATH="%ProgramFiles(x86)%\\Microsoft Visual Studio\\Installer\\;%PATH%"
 if not exist "%ProgramFiles(x86)%\\Microsoft Visual Studio\\Installer\\vswhere.exe" (
     curl -O https://github.com/Microsoft/vswhere/releases/download/1.0.71/vswhere.exe
 )
