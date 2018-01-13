@@ -3,7 +3,7 @@ def call()
     if (isUnix())
     {
         sh 'nuget restore'
-        sh 'xbuild /t:Build /p:Configuration=RELEASE'
+        sh 'msbuild /t:Build /p:Configuration=RELEASE'
     }
     else
     {
@@ -19,7 +19,7 @@ def debug()
     if (isUnix())
     {
         sh 'nuget restore'
-        sh 'xbuild /t:Build /p:Configuration=DEBUG'
+        sh 'msbuild /t:Build /p:Configuration=DEBUG'
     }
     else
     {
