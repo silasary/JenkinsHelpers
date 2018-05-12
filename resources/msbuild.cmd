@@ -1,5 +1,7 @@
-@REM Copyright (C) Microsoft Corporation. All rights reserved.
-@REM Licensed under the MIT license. See LICENSE.txt in the project root for license information.
+if exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" (
+    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" %*
+    exit /b !ERRORLEVEL!
+)
 
 @if not defined _echo echo off
 setlocal enabledelayedexpansion
